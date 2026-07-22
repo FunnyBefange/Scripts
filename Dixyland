@@ -1,0 +1,43 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/FunnyBefange/Library/refs/heads/main/library.lua", true))()
+
+local Window = Library:CreateWindow("Dixyland")
+
+Window:AddButton({
+ text = "Auto complete",
+ flag = "button",
+ callback = function()
+  local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local Vehicle
+
+for _, Folder in ipairs(workspace:GetChildren()) do
+    if Folder:IsA("Folder") and Folder.Name == "Subs" then
+        local Model = Folder:FindFirstChild("Sub_" .. LocalPlayer.Name)
+
+        if Model then
+            Vehicle = Model
+            break
+        end
+    end
+end
+
+local SafeZones = workspace.Sup_Event.SafeZones:GetChildren()
+
+table.sort(SafeZones, function(a, b)
+    return tonumber(a.Name) < tonumber(b.Name)
+end)
+
+for _, Zone in ipairs(SafeZones) do
+    Vehicle:PivotTo(Zone:GetPivot() * CFrame.new(0, -3, 0))
+    task.wait(1)
+end
+ end
+})
+
+Window:AddLabel({
+ text = "Made by Funny_games ^_^",
+ type = "label"
+})
+
+Library:Init()
