@@ -44,6 +44,17 @@ Window:AddToggle({
  end
 })
 
+Window:AddSlider({
+ text = "Change speed",
+ min = 10,
+ max = 170,
+ dual = true,
+ type = "slider",
+ callback = function(v)
+  speed = v
+end
+})
+
 Window:AddLabel({
  text = "Made by Funny games",
  type = "label"
