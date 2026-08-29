@@ -27,7 +27,7 @@ Window:AddToggle({
    		while getgenv().farm do
    			for _, coin in pairs(path:GetChildren()) do
    				if not getgenv().farm then break end
-   				if coin:IsA("Model") and coin.Name ~= "CoinsLeaderboard" and string.find(coin.Name, "Coin") then
+   				if coin:IsA("Model") and coin.Name ~= "CoinsLeaderboard" and string.find(coin.Name, "Coin") or coin.Name == "RareCoin" or coin.Name == "EpicCoin" or coin.Name == "CommonCoin" then
    					local coinCFrame = coin:GetPivot()
                     local distance = (hrp.Position - coinCFrame.Position).Magnitude
                     local duration = distance / speed
