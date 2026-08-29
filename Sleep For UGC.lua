@@ -1,4 +1,7 @@
 -- дата: 28 августа 2026 года
+if game:GetService("CoreGui"):FindFirstChild("ToraScript") then
+	game:GetService("CoreGui").ToraScript:Destroy()
+end
 local players = game:GetService("Players")
 local localplayer = players.LocalPlayer
 local character = localplayer.Character or localplayer.CharacterAdded:Wait()
@@ -6,6 +9,9 @@ local hrp = character:WaitForChild("HumanoidRootPart")
 local TweenService = game:GetService("TweenService")
 local speed = 50
 local path = workspace
+local virtualUser = game:GetService("VirtualUser")
+local StarterGui = game:GetService("StarterGui")
+local playerGui = localplayer:WaitForChild("PlayerGui", 15)
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/FunnyBefange/Library/refs/heads/main/library.lua", true))()
 
@@ -52,6 +58,31 @@ Window:AddSlider({
  type = "slider",
  callback = function(v)
   speed = v
+end
+})
+
+Window:AddButton({
+ text = "Check Coins",
+ flag = "button",
+ callback = function()
+ local coins = playerGui:WaitForChild("CoinsGUI"):WaitForChild("CurrencyFrame"):WaitForChild("CoinsFrame"):WaitForChild("CoinsHandler")
+ StarterGui:SetCore("SendNotification", {
+        Title = "Check Coins",
+        Text = tostring(coins.Text),
+        Duration = 3
+    })
+end
+})
+
+Window:AddButton({
+ text = "Anti AFK",
+ flag = "button",
+ callback = function()
+ localplayer.Idled:Connect(function()
+    virtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+    task.wait()
+    virtualUser:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+end)
 end
 })
 
