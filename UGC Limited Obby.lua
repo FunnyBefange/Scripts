@@ -52,7 +52,7 @@ end)
 
 MediumObby:GetPropertyChangedSignal("Text"):Connect(function()
     pcall(function()
-    if EasyObby.Text == "" then
+    if MediumObby.Text == "" then
         firetouchinterest(hrp, workspace.MediumWin, 0)
         task.wait(0.1)
         firetouchinterest(hrp, workspace.MediumWin, 1)
@@ -62,7 +62,7 @@ end)
 
 HardObby:GetPropertyChangedSignal("Text"):Connect(function()
     pcall(function()
-    if EasyObby.Text == "" then
+    if HardObby.Text == "" then
         firetouchinterest(hrp, workspace.HardWin, 0)
         task.wait(0.1)
         firetouchinterest(hrp, workspace.HardWin, 1)
@@ -72,7 +72,7 @@ end)
 
 ImpossibleObby:GetPropertyChangedSignal("Text"):Connect(function()
     pcall(function()
-    if EasyObby.Text == "" then
+    if ImpossibleObby.Text == "" then
         firetouchinterest(hrp, workspace.ImpossibleWin, 0)
         task.wait(0.1)
         firetouchinterest(hrp, workspace.ImpossibleWin, 1)
