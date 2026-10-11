@@ -6,10 +6,6 @@ local copy = setclipboard or toclipboard or setrbxclipboard or set_clipboard or 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/FunnyBefange/Library/refs/heads/main/library.lua", true))()
 local Window
 
-local function loadstring(url)
-    loadstring(game:HttpGet(url))()
-end
-
 -- getgenv().script = "script" -- or "copy"
 
 if game:GetService("CoreGui"):FindFirstChild("ToraScript") then
@@ -23,7 +19,7 @@ if getgenv().script == "script" then
         text = "Инф елд",
         flag = "button",
         callback = function()
-        loadstring('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source')
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
         end
     })
     
@@ -31,7 +27,7 @@ if getgenv().script == "script" then
         text = "Дэкс ++",
         flag = "button",
         callback = function()
-        loadstring("https://github.com/AZYsGithub/DexPlusPlus/releases/latest/download/out.lua")
+        loadstring(game:HttpGet("https://github.com/AZYsGithub/DexPlusPlus/releases/latest/download/out.lua"))()
         end
     })
     
@@ -39,7 +35,7 @@ if getgenv().script == "script" then
         text = "Кобальт",
         flag = "button",
         callback = function()
-        loadstring("https://gitlab.com/upio/cobalt/-/releases/permalink/latest/downloads/Cobalt.luau")
+        loadstring(game:HttpGet("https://gitlab.com/upio/cobalt/-/releases/permalink/latest/downloads/Cobalt.luau"))()
         end
     })
     
