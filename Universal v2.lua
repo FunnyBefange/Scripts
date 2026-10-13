@@ -16,7 +16,15 @@ local Window = Library:CreateWindow("Universal")
         loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
         end
     })
-    
+
+    Window:AddButton({
+        text = "Дэкс",
+        flag = "button",
+        callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+        end
+    })
+
     Window:AddButton({
         text = "Дэкс ++",
         flag = "button",
@@ -30,6 +38,14 @@ local Window = Library:CreateWindow("Universal")
         flag = "button",
         callback = function()
         loadstring(game:HttpGet("https://gitlab.com/upio/cobalt/-/releases/permalink/latest/downloads/Cobalt.luau"))()
+        end
+    })
+
+    Window:AddButton({
+        text = "Виверн",
+        flag = "button",
+        callback = function()
+        loadstring(Game:HttpGet("https://raw.githubusercontent.com/Games1799/Scripts/refs/heads/main/Wevorn.lua"))()
         end
     })
     
