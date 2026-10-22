@@ -10,7 +10,7 @@ LP.CharacterAdded:Connect(function(char)
 end)
 
 local TweenService = game:GetService("TweenService")
-local Time = workspace:WaitForChild("RoundTimerPart", 15):GetAttribute("Time", 15)
+local Time = workspace:WaitForChild("RoundTimerPart", 15):GetAttribute("Time")
 local cointext
 getgenv().auto = false
 local map
